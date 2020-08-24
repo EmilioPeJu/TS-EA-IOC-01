@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<components arch="linux-x86_64">
+	<devIocStats.devIocStatsHelper ioc="$(hostname)-EA-IOC-01" name="stats"/>
+	<ADSimDetector.simDetector ADDR="0" HEIGHT="960" P="$(hostname)-AD-SIM-01" PORT="ADSIM.CAM" R=":CAM:" TIMEOUT="1" WIDTH="1280"/>
+	<simHDF5Detector.SimHDF5Detector ADDR="0" P="$(hostname)-AD-SIM-02" PORT="ADSIM.CAM2" R=":CAM:" TIMEOUT="0"/>
+	<ADCore.NDPosPlugin ADDR="0" ENABLED="1" NDARRAY_PORT="ADSIM.CAM" P="$(hostname)-AD-SIM-01" PORT="ADSIM.POS" R=":POS:" TIMEOUT="1"/>
+	<adPython.adPythonPlugin ADDR="0" NDARRAY_PORT="ADSIM.CAM" P="$(hostname)-AD-SIM-01" PORT="ADSIM.PY" R=":PY:" TIMEOUT="1" classname="Template"/>
+	<adUtil.gdaPlugins CAM="ADSIM.CAM" NELEMENTS="12288000" P="$(hostname)-AD-SIM-01" PORTPREFIX="ADSIM" XSIZE="1280" YSIZE="960"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="CHAR" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.INT8" R=":ARR0:" TIMEOUT="1" TYPE="Int8"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="UCHAR" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.UINT8" R=":ARR1:" TIMEOUT="1" TYPE="Int8"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="SHORT" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.INT16" R=":ARR2:" TIMEOUT="1" TYPE="Int16"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="USHORT" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.UINT16" R=":ARR3:" TIMEOUT="1" TYPE="Int16"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="LONG" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.INT32" R=":ARR4:" TIMEOUT="1" TYPE="Int32"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="ULONG" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.UINT32" R=":ARR5:" TIMEOUT="1" TYPE="Int32"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="FLOAT" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.FLOAT32" R=":ARR6:" TIMEOUT="1" TYPE="Float32"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="DOUBLE" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="1228800" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.FLOAT64" R=":ARR7:" TIMEOUT="1" TYPE="Float64"/>
+	<ADCore.NDStdArrays ADDR="0" FTVL="UCHAR" NDARRAY_ADDR="0" NDARRAY_PORT="ADSIM.CAM" NELEMENTS="3686400" P="$(hostname)-AD-SIM-01" PORT="ADSIM.ARR.RGB" R=":ARR8:" TIMEOUT="1" TYPE="Int8"/>
+	<EPICS_BASE.EpicsEnvSet key="EPICS_CA_MAX_ARRAY_BYTES" value="9000000"/>
+	<motor.MotorSim AXES="8" name="SimController1"/>
+	<motor.basic_asyn_motor ADDR="1" ACCL="0.0001" DESC="motor simx" DHLM="1000" DLLM="-1000" EGU="mm" M=":M1" MRES=".01" NTM="1" P="$(hostname)-MO-SIM-01" PORT="SimController1" PREC="3" TWV="1" VELO="1000" name="Motor1"/>
+	<motor.basic_asyn_motor ADDR="2" ACCL="0.0001" DESC="motor simy" DHLM="1000" DLLM="-1000" EGU="mm" M=":M2" MRES=".01" NTM="1" P="$(hostname)-MO-SIM-01" PORT="SimController1" PREC="3" TWV="1" VELO="1000" name="Motor2"/>
+	<motor.basic_asyn_motor ADDR="3" ACCL="0.0001" DESC="motor simz" DHLM="1000" DLLM="-1000" EGU="mm" M=":M3" MRES=".01" NTM="1" P="$(hostname)-MO-SIM-01" PORT="SimController1" PREC="3" TWV="1" VELO="1000" name="Motor3"/>
+	<motor.basic_asyn_motor ADDR="4" ACCL="0.0001" DESC="motor simtheta" DHLM="1000" DLLM="-1000" EGU="mm" M=":M4" MRES=".01" NTM="1" P="$(hostname)-MO-SIM-01" PORT="SimController1" PREC="3" TWV="1" VELO="1000" name="Motor4"/>
+	<motor.basic_asyn_motor ADDR="5" ACCL="0.0001" DESC="motor simload" DHLM="1000" DLLM="-1000" EGU="mm" M=":M5" MRES=".01" NTM="1" P="$(hostname)-MO-SIM-01" PORT="SimController1" PREC="3" TWV="1" VELO="1000" name="Motor5"/>
+</components>
